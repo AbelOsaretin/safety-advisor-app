@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Expert AI Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Safety Expert AI</h1>
+            <p class="tagline">Get professional safety advice and analysis from our AI safety expert</p>
+        </header>
+        
+        <div class="input-section">
+            <h2>How can our safety expert help you today?</h2>
+            <div class="alert" id="errorMessage"></div>
+            <textarea id="userQuery" placeholder="Describe your safety concern or ask for advice. For example: 'What are the main safety concerns for traveling to Lagos, Nigeria?' or 'Provide safety analysis for construction sites in Abuja.'"></textarea>
+            
+            <div class="options">
+                <div class="option" onclick="insertTemplate('safety concerns in Nigeria')">Safety in Nigeria</div>
+                <div class="option" onclick="insertTemplate('workplace safety assessment')">Workplace Safety</div>
+                <div class="option" onclick="insertTemplate('travel safety precautions')">Travel Safety</div>
+            </div>
+            
+            <button id="submitBtn" onclick="getResponse()">Get Safety Advice</button>
+        </div>
+        
+        <div class="loading" id="loadingIndicator">
+            <div class="spinner"></div>
+            <p>Our safety expert is analyzing your request...</p>
+        </div>
+        
+        <div class="response-section hidden" id="responseSection">
+            <h2>Safety Assessment</h2>
+            <div id="responseContent"></div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Safety Expert AI Agent | Powered by CrewAI and Gemini</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -41,9 +41,9 @@ def get_safety_advice():
         # Create the safety expert agent
         safety_professional = Agent(
             role="Senior safety expert",
-            goal="Give the best safety advise and analysis",
+            goal="Give the best safety advise, analysis, and tips",
             backstory="You work at a top firm with global insights.",
-            verbose=True,
+            verbose=False,
             llm=llm
         )
         
